@@ -1,0 +1,37 @@
+﻿@page "/"
+
+<div class="flexContainer">
+    <div class="flexItem--6 infoarea">
+        <h1>Discovery II</h1>
+        <p>Height: <span>2.30m</span> Width: <span>1.60m</span></p>
+    </div>
+    <div class="flexItem--6 dataarea">
+        @foreach (var maintenance in _dueMaintenances)
+        {
+            <div class="tile maintenanceEntry">
+                <div>
+                    <h3>@maintenance.Title</h3>
+                    <p>@maintenance.Description</p>
+                </div>
+
+                <a onclick="@(() => CompleteItem(maintenance.Id))">
+                    <b>
+                        &#x2714;
+                    </b>
+                </a>
+            </div>
+        }
+
+        <div class="tileContainer">
+            <div class="tile tile--maps" onclick="@OpenMapAsync">
+                <h3>Navigation</h3>
+                <p>Open Google Maps</p>
+            </div>
+            <div class="tile tile--spotify" onclick="@OpenMapAsync">
+                <h3>Music</h3>
+                <p>Open Spotify</p>
+            </div>
+        </div>
+        <a href="/createmaintenance" onclick="@(() => NavigationManager.NavigateTo("/createmaintenance"))">+ Add Recurring Maintenance</a>
+    </div>
+</div>

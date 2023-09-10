@@ -1,0 +1,20 @@
+﻿@page "/createmaintenance"
+@using RoverCopilot.Data.Models;
+
+<div class="flexContainer paddedContent">
+    <h3>Create Recurring Maintenance</h3>
+
+    <EditForm Model="@_model" OnSubmit="@SubmitForm">
+        <InputText @bind-Value="_model.Title" class="customInput" placeholder="Title" />
+        <InputText @bind-Value="_model.Description" class="customInput" placeholder="Description"/>
+        <InputDate @bind-Value="_model.DueDate" class="customInput half" />
+        <InputSelect @bind-Value="_model.Interval" class="customInput half">
+            @foreach (var interval in Enum.GetValues(typeof(ServiceInterval)))
+            {
+                <option value="@interval">@interval</option>
+            }
+        </InputSelect>
+
+        <button class="button" type="submit">Submit</button>
+    </EditForm>
+</div>

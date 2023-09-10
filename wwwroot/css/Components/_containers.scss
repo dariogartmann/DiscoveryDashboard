@@ -1,0 +1,22 @@
+.flexContainer {
+    display: flex;
+    flex-flow: row wrap;
+
+    .flexItem--6 {
+        width: 50%;
+        width: 50vw;
+        height: calc(100% - 128px);
+        height: calc(100vh - 128px);
+
+        margin: 0;
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
+}
+
+.paddedContent {
+    width: calc(100vw - 128px);
+    padding: 16px 64px;
+
+    justify-content: space-between;
+}

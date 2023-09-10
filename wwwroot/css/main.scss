@@ -1,0 +1,30 @@
+@import "_variables.scss";
+
+@import "Components/_containers.scss";
+@import "Components/_infoarea.scss";
+@import "Components/_tile.scss";
+@import "Components/_form.scss";
+
+body, #app {
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+    background-color: $COLOR_BLACK;
+    color: $COLOR_WHITE;
+    text-align: left;
+
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    user-select: none;
+}
+
+
+a {
+    color: $COLOR_ACCENT;
+    text-decoration: none;
+
+    &:active, &:hover {
+        color: $COLOR_ACCENT;
+    }
+}

@@ -1,0 +1,48 @@
+@import "../_variables.scss";
+
+.tile {
+    max-width: 100%;
+    border: 1px solid $COLOR_LIGHTGRAY;
+    border-radius: 4px;
+    background-color: $COLOR_DARKGRAY;
+    padding: 16px;
+    margin-bottom: 12px;
+
+    h3, p {
+        margin: 0px;
+    }
+
+    h3 {
+        margin-bottom: 4px;
+    }
+
+    &.tile--maps{
+        background-image: url("/images/maps.png");
+        background-size: cover;
+        background-position: center;
+
+    }
+}
+
+.tileContainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    overflow: scroll;
+
+    .tile {
+        width: calc(50% - 40px) !important;
+        height: 128px;
+
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: flex-end;
+    }
+}
+
+.maintenanceEntry {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}

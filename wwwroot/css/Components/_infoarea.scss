@@ -1,0 +1,35 @@
+.infoarea {
+    background-image: linear-gradient(-90deg, rgba(26,26,26,1) 0%, rgba(26,26,26,0.5) 100%), url("/images/Discovery2.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    padding: 64px;
+    width: calc(50vw - 128px) !important;
+
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-end;
+    overflow: hidden;
+
+    h1 {
+        font-size: 3.25rem;
+        margin-bottom: 8px;
+    }
+
+    p {
+        font-size: 1.35rem;
+        margin: 0;
+
+        span {
+            color: $COLOR_ACCENT;
+            font-weight: 600;
+        }
+    }
+}
+
+.dataarea {
+    padding-right: 64px;
+    width: calc(50vw - 64px) !important;
+    overflow-y: auto;
+}

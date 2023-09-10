@@ -1,0 +1,28 @@
+﻿@import "../_variables.scss";
+
+.customInput {
+    max-width: calc(100% - 32px);
+    width: 100%;
+    border: 1px solid $COLOR_LIGHTGRAY;
+    border-radius: 4px;
+    background-color: $COLOR_DARKGRAY;
+    padding: 16px;
+    margin-bottom: 12px;
+    color: $COLOR_WHITE;
+    width: 100%;
+
+    &.half {
+        width: calc(50% - 32px);
+    }
+}
+
+button.button {
+    max-width: 100%;
+    width: 100%;
+    border: 1px solid $COLOR_LIGHTGRAY;
+    border-radius: 4px;
+    background-color: $COLOR_DARKGRAY;
+    padding: 16px;
+    margin-bottom: 12px;
+    color: $COLOR_WHITE;
+}

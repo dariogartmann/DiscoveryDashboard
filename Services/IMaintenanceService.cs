@@ -1,6 +1,6 @@
 ﻿using RoverCopilot.Data.Models;
 
-namespace RoverCopilot.Data.Services
+namespace RoverCopilot.Services
 {
     public interface IMaintenanceService
     {

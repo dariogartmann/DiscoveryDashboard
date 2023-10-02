@@ -4,13 +4,13 @@
 @import "Components/_infoarea.scss";
 @import "Components/_tile.scss";
 @import "Components/_form.scss";
+@import "Components/_battery.scss";
 
 body, #app {
     font-family: "Poppins", Arial, Helvetica, sans-serif;
     background-color: $COLOR_BLACK;
     color: $COLOR_WHITE;
     text-align: left;
-
     padding: 0;
     margin: 0;
 }

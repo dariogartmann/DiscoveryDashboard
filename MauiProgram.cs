@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using RoverCopilot.Data.Database;
-using RoverCopilot.Data.Services;
+using RoverCopilot.Services;
 
 namespace RoverCopilot;
 
@@ -25,6 +25,7 @@ public static class MauiProgram
 #endif
 
 		builder.Services.AddSingleton<IMaintenanceService, MaintenanceService>();
+		builder.Services.AddSingleton<IBatteryStateService, BatteryStateService>();
         builder.Services.AddSingleton<DiscoveryDatabase>();
 
 

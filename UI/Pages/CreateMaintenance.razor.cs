@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Components;
 using RoverCopilot.Data.Models;
-using RoverCopilot.Data.Services;
+using RoverCopilot.Services;
 
 namespace RoverCopilot.UI.Pages
 {

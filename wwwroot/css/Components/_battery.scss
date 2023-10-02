@@ -1,0 +1,32 @@
+﻿@import "../_variables.scss";
+
+.batteryIndicatorOutlines {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: left;
+    align-items: center;
+    width: calc(100% - 6px);
+    margin-bottom: 8px;
+    height: 48px;
+    border-radius: $BORDER_RADIUS_OUTER_DEFAULT;
+    border: 1px solid $COLOR_LIGHTGRAY;
+    padding: 0 2px;
+
+    .batteryIndicator {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        border-radius: $BORDER_RADIUS_INNER_DEFAULT;
+        background: rgb(8, 159, 11);
+        height: 90%;
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+
+        span {
+            color: $COLOR_WHITE;
+            // text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+    }
+}

@@ -2,10 +2,23 @@
 
 <div class="flexContainer">
     <div class="flexItem--6 infoarea">
-        <h1>Discovery II</h1>
-        <p>Height: <span>2.30m</span> Width: <span>1.60m</span></p>
+       
+        <div>
+            <h1>Discovery II</h1>
+            <p>Height: <span>2.30m</span> Width: <span>1.60m</span></p>
+        </div>
     </div>
     <div class="flexItem--6 dataarea">
+        <div class="batteryIndicatorOutlines">
+            <div class="batteryIndicator" style="width: @BatteryChargeCss">
+                <span>
+                    <b>Service Battery State</b>
+                    <br/>
+                    @BatteryChargeCss - @BatteryState
+                </span>
+            </div>
+        </div>
+
         @foreach (var maintenance in _dueMaintenances)
         {
             <div class="tile maintenanceEntry">
@@ -13,7 +26,6 @@
                     <h3>@maintenance.Title</h3>
                     <p>@maintenance.Description</p>
                 </div>
-
                 <a onclick="@(() => CompleteItem(maintenance.Id))">
                     <b>
                         &#x2714;
@@ -23,15 +35,22 @@
         }
 
         <div class="tileContainer">
-            <div class="tile tile--maps" onclick="@OpenMapAsync">
+            <div class="tile tile--maps" onclick="@(async() => await OpenMapAsync())">
                 <h3>Navigation</h3>
                 <p>Open Google Maps</p>
             </div>
-            <div class="tile tile--spotify" onclick="@OpenMapAsync">
+            <div class="tile tile--spotify" onclick="@(async() => await OpenMapAsync())">
                 <h3>Music</h3>
                 <p>Open Spotify</p>
             </div>
         </div>
         <a href="/createmaintenance" onclick="@(() => NavigationManager.NavigateTo("/createmaintenance"))">+ Add Recurring Maintenance</a>
+        <p>Battery_Messages: (@_batteryMessages.Count())</p>
+        <button onclick="@(async() => await ConnectBattery())">Connect Battery</button>
+        <button onclick="@(() => UpdateBatteryMessages())">Get current bat msg</button>
+        @foreach(string message in _batteryMessages)
+        {
+            <p>@message</p>
+        }
     </div>
 </div>
